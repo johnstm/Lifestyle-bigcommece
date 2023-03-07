@@ -8,7 +8,7 @@
       {{#each sitemap}}
           <li class="sitemap-block">
               <h3 class="block-title">{{label}}</h3>
-              <ul class="list-with-arrow">
+              <ol class="list-with-arrow">
                   {{#each body}}
                   <li>
                       <a href="{{url}}">{{label}}</a>
@@ -26,7 +26,7 @@
                       <a href="{{subsection_url}}">{{lang 'sitemap.show_all_link'}}</a>
                   </li>
                   {{/if}}
-              </ul>
+              </ol>
           </li>
       {{/each}}
     </ul>
