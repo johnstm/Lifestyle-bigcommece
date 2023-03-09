@@ -90,7 +90,8 @@ header.header.stuck  .header-right {
     font-style: normal;
 }
 
-#quickSearch #search_query{
+#quickSearch #search_query ,
+#mobileQuickSearchForm #search_query {
     font-style: normal;
 }
 
@@ -150,6 +151,11 @@ h3.block-title{
 }
 
 
+body.type-default .heroCarousel-content{
+    background-color: #ffffff73;
+    border-radius: 10px;
+    min-width: 70rem;
+}
 
 // Slick carousel 
 
@@ -197,6 +203,37 @@ h3.block-title{
 
 // Slick carousel 
 
+// Instagram widget
+body.type-default .eapps-instagram-feed a.eapps-link {
+    display: none !important;
+}
+
+body.type-default  .eapps-instagram-feed-container {
+    margin-bottom: 30px;
+}
+
+body.type-default .eapps-instagram-feed-posts-slider {
+    // overflow: visible;
+    position: static;
+}
+
+body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .eui-slider-arrow {
+    background: transparent;
+    z-index: 100;
+    visibility: visible;
+    opacity: 1;
+    width: 23px;
+    height: 23px;
+    box-shadow: none;
+}
+
+body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .eui-slider-arrow:active  {
+   transform: translate(50%, -50%);
+}
+
+body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .eui-slider-arrow .eapps-instagram-feed-posts-slider-nav-icon {
+    fill: black;
+}
 
 // Quantity box 
 // .form-field .form-increment{
