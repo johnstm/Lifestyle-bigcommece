@@ -3,6 +3,23 @@
     color: #ffffff;
 }
 
+header .header-inner {
+    position: relative;
+}
+
+header .header-inner .logo-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: auto;
+}
+
+header .logo-wrap .header-logo-text {
+    text-align: center;
+    font-size: 12px;
+}
+
 header.header.stuck  .header-left{
     display: -ms-flexbox;
     display: flex;
@@ -13,7 +30,7 @@ header.header.stuck  .header-left{
 }
 
 header.header.stuck  .header-center{
-    width: 50%;
+    width: 10   0%;
 }
 
 header.header.stuck  .header-right {
@@ -25,7 +42,100 @@ header.header.stuck  .header-right {
     -webkit-flex-wrap: nowrap;
 }
 
+@media screen and (min-width:450px) {
+    header .logo-wrap .header-logo-text {
+        font-size: 15px;
+    }
+
+    header .header-inner .logo-wrap {
+        width: 180px;
+    }
+}
+
+@media screen and (min-width:1023px) {
+    header .header-inner .logo-wrap{
+        top: 25%;
+    }
+
+    .header-right{
+        position: static !important;
+    }
+
+    header .header-main .header-inner{
+        flex-wrap: wrap;
+    }
+
+    header .header-main .header-center{
+        display: flex;
+        width: 100%;
+        order: 3;
+        justify-content: center;
+    }
+
+    #quickSearch.is-open{
+        left: 50% !important;
+        right: auto !important;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+// Search 
+
+#quickSearch{
+    background-color: $header-bg;
+    width: 900px !important;
+    border: 1px solid #ffffff;
+    padding: 13px 0px;
+    font-style: normal;
+}
+
+#quickSearch #search_query ,
+#mobileQuickSearchForm #search_query {
+    font-style: normal;
+}
+
+// Navigation
+#headerSidebar  .nav-arrow{
+    display: none;
+}
+
+// triangle
+header .navlist-sub.nav-second-level::before{
+    display: none;
+}
+
+@media screen and (min-width:1023px) {
+    header ul.navPages-list .navPages-item {
+        border-bottom: 4px solid transparent;
+    }
+
+    header ul.navPages-list .navPages-item:hover{
+        border-bottom-color: transparent ;
+    }
+
+    header .navlist-sub.nav-second-level {
+        margin-top: 4px;
+    }
+}
+
+
+
 // End Header
+
+// Start Common Styles
+h1.page-heading{
+    font-size: 30px;
+    line-height: 1.3;
+}
+
+h3.block-title{
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+// End Common Styles 
+
 
 // Hero banner
 .heroCarousel .slick-arrow ,
@@ -41,6 +151,11 @@ header.header.stuck  .header-right {
 }
 
 
+body.type-default .heroCarousel-content{
+    background-color: #ffffff73;
+    border-radius: 10px;
+    min-width: 70rem;
+}
 
 // Slick carousel 
 
@@ -88,6 +203,37 @@ header.header.stuck  .header-right {
 
 // Slick carousel 
 
+// Instagram widget
+body.type-default .eapps-instagram-feed a.eapps-link {
+    display: none !important;
+}
+
+body.type-default  .eapps-instagram-feed-container {
+    margin-bottom: 30px;
+}
+
+body.type-default .eapps-instagram-feed-posts-slider {
+    // overflow: visible;
+    position: static;
+}
+
+body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .eui-slider-arrow {
+    background: transparent;
+    z-index: 100;
+    visibility: visible;
+    opacity: 1;
+    width: 23px;
+    height: 23px;
+    box-shadow: none;
+}
+
+body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .eui-slider-arrow:active  {
+   transform: translate(50%, -50%);
+}
+
+body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .eui-slider-arrow .eapps-instagram-feed-posts-slider-nav-icon {
+    fill: black;
+}
 
 // Quantity box 
 // .form-field .form-increment{
@@ -105,3 +251,33 @@ footer.footer .footer-info-list li::before{
     display: none;
 }
 // Footer 
+
+// start Sitemap 
+body.type-sitemap ol.list-with-arrow , 
+body.type-sitemap ol.list-with-arrow li {
+    list-style-type: decimal;
+    color: black;
+}
+
+
+body.type-sitemap ol.list-with-arrow  ul {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+body.type-sitemap  ol.list-with-arrow a {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2e3344;
+}
+
+@media (min-width:768px) and (max-width:992px) {
+    body.type-sitemap ul.sitemap-block-main{
+        flex-wrap: wrap;
+    }
+
+    body.type-sitemap li.sitemap-block{
+        flex-basis: 50%;
+    }
+}
+// End Sitemap
