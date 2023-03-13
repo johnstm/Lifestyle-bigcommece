@@ -1,3 +1,56 @@
+// Fonts
+@font-face {
+    font-family: 'overpass';
+    src: url('../../fonts/overpass-variablefont_wght-webfont.eot');
+    src: url('../../fonts/overpass-variablefont_wght-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/overpass-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../../fonts/overpass-variablefont_wght-webfont.woff') format('woff'),
+         url('../../fonts/overpass-variablefont_wght-webfont.ttf') format('truetype'),
+         url('../../fonts/overpass-variablefont_wght-webfont.svg#overpassregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root{
+    --font1:'overpass' ,sans-serif ;
+    --btnclr1: #2e3344 ;
+}
+
+
+body *{
+    font-family: var(--font1) ;
+}
+
+
+.tm__main button , .tm__main a.button ,
+.tm__main div[role="button"] {
+    border-radius: 0px;
+    font-family: var(--font1);
+    font-weight: 500;
+    // background-color: $theme-primary-color;
+    text-transform: capitalize;
+}
+
+.tm__main .tm__button ,
+.type-default div[class^="alternative-banner-row-"] a.button_link_href {
+    border-radius: 0px;
+    font-family: var(--font1);
+    font-weight: 500;
+    text-transform: capitalize;
+    color: white;
+    background-color: var(--btnclr1);
+    border: 1px solid var(--btnclr1);
+    padding: 11px 20px;
+}
+
+.tm__main .tm__button:hover ,
+.type-default div[class^="alternative-banner-row-"] a.button_link_href:hover {
+    background-color: white;
+    color: var(--btnclr1);
+    border: 1px solid var(--btnclr1);
+}
+
 // Header
 .logo-block .header-logo a:hover{
     color: #ffffff;
@@ -157,6 +210,29 @@ body.type-default .heroCarousel-content{
     min-width: 70rem;
 }
 
+.type-default .heroCarousel .heroCarousel-title ,
+.type-default .heroCarousel .heroCarousel-description {
+    font-family: var(--font1);
+    letter-spacing: normal;
+    font-weight: 500;
+}
+
+
+.type-default .heroCarousel .heroCarousel-title ,
+.type-default .heroCarousel .heroCarousel-description {
+    line-height: 1.4;
+}
+
+.type-default .heroCarousel .heroCarousel-description {
+    text-transform: none;
+}
+
+@media screen and (min-width:992px) {
+    .type-default .heroCarousel .heroCarousel-description {
+        font-size: 30px;
+    }
+}
+
 // Slick carousel 
 
 .productCarousel.slick-initialized  .slick-arrow {
@@ -183,6 +259,10 @@ body.type-default .heroCarousel-content{
 
 .slick-arrow.slick-disabled:hover svg {
     fill: #b8b8b8;
+}
+
+.productCarousel-slide .card .card-figure a.button {
+    border-radius: 50%;
 }
 
 @media screen and (min-width:992px) {
@@ -240,6 +320,17 @@ body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .e
 //     display: flex;
 // }
 
+// Alternate banner
+.type-default div[class^="alternative-banner-row-"] a.button_link_href {
+    text-transform: capitalize;
+}
+
+
+.tm__main div[class^="sd-simple-text-"] *{
+    font-family: var(--font1);
+}
+
+// 
 
 // Footer 
 
