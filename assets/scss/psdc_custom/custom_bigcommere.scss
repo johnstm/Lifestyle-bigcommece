@@ -1,3 +1,56 @@
+// Fonts
+@font-face {
+    font-family: 'overpass';
+    src: url('../../fonts/overpass-variablefont_wght-webfont.eot');
+    src: url('../../fonts/overpass-variablefont_wght-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/overpass-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../../fonts/overpass-variablefont_wght-webfont.woff') format('woff'),
+         url('../../fonts/overpass-variablefont_wght-webfont.ttf') format('truetype'),
+         url('../../fonts/overpass-variablefont_wght-webfont.svg#overpassregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root{
+    --font1:'overpass' ,sans-serif ;
+    --btnclr1: #2e3344 ;
+}
+
+
+body *{
+    font-family: var(--font1) ;
+}
+
+
+.tm__main button , .tm__main a.button ,
+.tm__main div[role="button"] {
+    border-radius: 0px;
+    font-family: var(--font1);
+    font-weight: 500;
+    // background-color: $theme-primary-color;
+    text-transform: capitalize;
+}
+
+.tm__main .tm__button ,
+.type-default div[class^="alternative-banner-row-"] a.button_link_href {
+    border-radius: 0px;
+    font-family: var(--font1);
+    font-weight: 500;
+    text-transform: capitalize;
+    color: white;
+    background-color: var(--btnclr1);
+    border: 1px solid var(--btnclr1);
+    padding: 11px 20px;
+}
+
+.tm__main .tm__button:hover ,
+.type-default div[class^="alternative-banner-row-"] a.button_link_href:hover {
+    background-color: white;
+    color: var(--btnclr1);
+    border: 1px solid var(--btnclr1);
+}
+
 // Header
 .logo-block .header-logo a:hover{
     color: #ffffff;
@@ -40,6 +93,10 @@ header.header.stuck  .header-right {
     justify-content: flex-end;
     flex-wrap: nowrap;
     -webkit-flex-wrap: nowrap;
+}
+
+header .header-right li.wishlist a svg{
+    fill: #f6f6f6;
 }
 
 @media screen and (min-width:450px) {
@@ -157,7 +214,40 @@ body.type-default .heroCarousel-content{
     min-width: 70rem;
 }
 
+.type-default .heroCarousel .heroCarousel-title ,
+.type-default .heroCarousel .heroCarousel-description {
+    font-family: var(--font1);
+    letter-spacing: normal;
+    font-weight: 500;
+}
+
+
+.type-default .heroCarousel .heroCarousel-title ,
+.type-default .heroCarousel .heroCarousel-description {
+    line-height: 1.4;
+}
+
+.type-default .heroCarousel .heroCarousel-description {
+    text-transform: none;
+}
+
+@media screen and (max-width:768px) {
+    body.type-default .heroCarousel-content{
+        background: transparent;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .type-default .heroCarousel .heroCarousel-description {
+        font-size: 30px;
+    }
+}
+
 // Slick carousel 
+
+.product-section .page-heading {
+    font-weight: 600;
+}
 
 .productCarousel.slick-initialized  .slick-arrow {
     top: calc( 50% - 20px );
@@ -183,6 +273,10 @@ body.type-default .heroCarousel-content{
 
 .slick-arrow.slick-disabled:hover svg {
     fill: #b8b8b8;
+}
+
+.productCarousel-slide .card .card-figure a.button {
+    border-radius: 50%;
 }
 
 @media screen and (min-width:992px) {
@@ -222,7 +316,7 @@ body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .e
     z-index: 100;
     visibility: visible;
     opacity: 1;
-    width: 23px;
+    width: auto;
     height: 23px;
     box-shadow: none;
 }
@@ -239,6 +333,119 @@ body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .e
 // .form-field .form-increment{
 //     display: flex;
 // }
+
+// Alternate banner
+.type-default div[class^="alternative-banner-row-"] a.button_link_href {
+    text-transform: capitalize;
+}
+
+
+.tm__main div[class^="sd-simple-text-"] *{
+    font-family: var(--font1);
+}
+
+// alternate banner 
+@media screen and (max-width:768px) {
+    body.type-default div[class^="alternative-banner-row-"] .column-right{
+        padding-top: 15px;
+    }
+}
+
+body.type-default div[class^="alternative-banner-row-"] *{
+    letter-spacing: normal;
+}
+
+// Best sellers
+.type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow"] {
+    background: transparent;
+    opacity: 1  ;
+}
+
+.type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow"] path {
+    fill: black;
+}
+
+@media screen and (max-width:800px) {
+    .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow"] {
+        top: 35%;
+        width: auto;
+    }
+
+    .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow--left"] {
+        left: -10px;
+    } 
+    
+    .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow--right"] {
+        right: -10px;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow"] {
+        top: 72px;
+        width: auto;
+    }
+
+    .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow--left"] {
+        left: -10px;
+    } 
+    
+    .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow--right"] {
+        right: -10px;
+    }
+}
+
+// Carousel 2
+body.type-default div[class^="bc-carousel-"]   div[data-test-id="carousel-title"] p{
+    font-weight: 600;
+    color: black;
+}
+
+body.type-default div[class^="bc-carousel-"] div[data-test-id="carousel-cta-button"] , 
+body.type-default div[class^="sd-hero-image-"] div[data-test-id="hero-image-button"]{
+    padding: 11px 20px;
+    background-color: var(--btnclr1);
+    border: 1px solid var(--btnclr1);
+}
+
+body.type-default div[class^="bc-carousel-"] div[data-test-id="carousel-cta-button"]:hover ,
+body.type-default div[class^="sd-hero-image-"] div[data-test-id="hero-image-button"]:hover {
+    background-color: white;
+    color: var(--btnclr1);
+    border: 1px solid var(--btnclr1);
+}
+
+body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--left ,
+body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--right  {
+    background: transparent;
+    width: auto;
+    color: black;
+}
+
+body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--left {
+    left: -25px;
+}
+
+body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--right{
+    right: -25px;
+}
+
+body.type-default div[class^="sd-hero-image-"] div[data-test-id="hero-image-title"] p{
+    font-weight: 600;
+    color: black;
+}
+
+// Blog 
+.type-default .home-blog-post .page-heading {
+    font-weight: 600;
+    color: black;
+}
+
+.type-default .home-blog-list .home-blog-detail {
+    padding-left: 0px;
+}
+
+
 
 
 // Footer 

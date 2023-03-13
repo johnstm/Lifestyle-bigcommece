@@ -2,3 +2,5 @@ node_modules
 package-lock.json
 secrets.stencil.json
 config.stencil.json 
+assets/dist
+assets/dist/report.html
