@@ -1,0 +1,25 @@
+.type-category {
+
+}
+
+.body .container.category {
+    width: 100%;
+    max-width: 100%;
+}
+
+.contentwrap {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width:768px) {
+    .body .container.category {
+        padding: 0px;
+    }
+}
+
+.category-banner-section ~ .page.container {
+    margin: 0 auto;
+}

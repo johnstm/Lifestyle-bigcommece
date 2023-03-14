@@ -457,6 +457,32 @@ footer.footer .footer-info-list li{
 footer.footer .footer-info-list li::before{
     display: none;
 }
+
+@media screen and (max-width:768px) {
+    .tm__main footer .footer-info-heading.footer-toggle-title {
+        padding-left: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .tm__main footer .footer-info .footer-info-col .footer-info--col-inn {
+        border: none;
+    }
+
+    .tm__main footer .footer-info .footer-info-col{
+        border-bottom: 1px solid #CACACA;
+    }
+    
+    footer .container .footer-info {
+        margin: 0px;
+    }
+
+    footer .footer-info-col.footer-store-info {
+        padding-bottom: 20px;
+        margin: 0;
+    }
+}
+
 // Footer 
 
 // start Sitemap 
@@ -488,3 +514,5 @@ body.type-sitemap  ol.list-with-arrow a {
     }
 }
 // End Sitemap
+
+@import './plp.scss';
