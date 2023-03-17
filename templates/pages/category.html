@@ -16,7 +16,9 @@ limit: {{theme_settings.categorypage_products_per_page}}
 
 {{#partial "page"}}
 
+<div class="container">
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+</div>
 
 <div class="category-banner-section">
   <div class="category-left-section {{#if banners.top}}visible-top-banner{{/if}}">
@@ -30,17 +32,21 @@ limit: {{theme_settings.categorypage_products_per_page}}
       {{/if}}
     </div>
 
-    {{#unless theme_settings.hide_category_page_heading }}
-    {{#if category.name}}
-    <h1 class="page-heading">{{category.name}}</h1>
-    {{else}}
-    <h1 class="page-heading">Categories</h1>
-    {{/if}}
-    {{{region name="category_below_header"}}}
-    {{/unless}}
-    {{#if category.description}}
-    {{{category.description}}}
-    {{/if}}
+    <div class="contentwrap"> 
+      <div class="container">
+        {{#unless theme_settings.hide_category_page_heading }}
+        {{#if category.name}}
+        <h1 class="page-heading">{{category.name}}</h1>
+        {{else}}
+        <h1 class="page-heading">Categories</h1>
+        {{/if}}
+        {{{region name="category_below_header"}}}
+        {{/unless}}
+        {{#if category.description}}
+        {{{category.description}}}
+        {{/if}}
+      </div>
+    </div>
   </div>
   {{#if banners.top}}
   <div class="banners category-right-section" data-banner-location="top">
@@ -57,8 +63,7 @@ limit: {{theme_settings.categorypage_products_per_page}}
 </div>
 
 
-
-<div class="page">
+<div class="container page">
   {{#if category.faceted_search_enabled}}
   <aside class="page-sidebar">
     {{> components/category/sidebar-custom-category}}
