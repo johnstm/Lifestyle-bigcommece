@@ -13,15 +13,17 @@
 }
 
 :root{
-    --font1:'overpass' ,sans-serif ;
+    --font1: 'montserratregular';
+    --font2: 'montserratmedium';
+    --font3: 'montserratsemibold';
+    --font4: 'montserratbold';
     --btnclr1: #2e3344 ;
 }
 
 
-body *{
+body.tm__main *{
     font-family: var(--font1) ;
 }
-
 
 .tm__main button , .tm__main a.button ,
 .tm__main div[role="button"] {
@@ -207,7 +209,6 @@ h3.block-title{
     fill: #2e3344 ;
 }
 
-
 body.type-default .heroCarousel-content{
     background-color: #ffffff73;
     border-radius: 10px;
@@ -220,7 +221,6 @@ body.type-default .heroCarousel-content{
     letter-spacing: normal;
     font-weight: 500;
 }
-
 
 .type-default .heroCarousel .heroCarousel-title ,
 .type-default .heroCarousel .heroCarousel-description {
@@ -275,7 +275,7 @@ body.type-default .heroCarousel-content{
     fill: #b8b8b8;
 }
 
-.productCarousel-slide .card .card-figure a.button {
+.tm__pdtcard.card .card-figure a.button {
     border-radius: 50%;
 }
 
@@ -329,6 +329,16 @@ body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .e
     fill: black;
 }
 
+body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .eui-slider-arrow-next svg {
+    left: auto;
+    right: -15px;
+}
+
+body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .eui-slider-arrow-prev svg {
+    right: auto;
+    left: -15px;
+}
+
 // Quantity box 
 // .form-field .form-increment{
 //     display: flex;
@@ -365,10 +375,46 @@ body.type-default div[class^="alternative-banner-row-"] *{
     fill: black;
 }
 
+// Brand name 
+.type-default div[id^="sd-product-set-container-"] .css-1wn6xct {
+    margin-top: 22px;
+    min-width: 1px;
+    min-height: 23px;
+    display: block;
+    font-size: 14px;
+    color: #666666;
+}
+
+// pdt name 
+.type-default div[id^="sd-product-set-container-"] .css-1clkqco {
+    margin: 15px 0px;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.type-default div[id^="sd-product-set-container-"] .css-1clkqco a {
+    color: $card-title-color;
+}
+
+.type-default div[id^="sd-product-set-container-"] .css-1clkqco a:hover{
+     color: $card-title-color-hover;
+}
+
+//PRice field
+.type-default div[id^="sd-product-set-container-"]  .css-1eew03s {
+    margin-bottom: 12px;
+}
+
 @media screen and (max-width:800px) {
     .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow"] {
-        top: 35%;
+        top: calc( 50% - 70px );
         width: auto;
+        height: auto;
+    }
+
+    .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow"] svg {
+        width: 12px;
+        height: 16px;
     }
 
     .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow--left"] {
@@ -392,6 +438,12 @@ body.type-default div[class^="alternative-banner-row-"] *{
     
     .type-default div[id^="sd-product-set-container-"] button[class*="sd-product-set__arrow--right"] {
         right: -10px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .type-default div[id^="sd-product-set-container-"] .css-1clkqco {
+        font-size: 16px;
     }
 }
 
@@ -419,7 +471,19 @@ body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--left ,
 body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--right  {
     background: transparent;
     width: auto;
+    height: auto;
+    opacity: 1;
     color: black;
+}
+
+
+body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--left svg,
+body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--right svg ,
+body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--left svg path,
+body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--right svg path {
+   width: 12px;
+    height: 16px;
+    fill: #000;
 }
 
 body.type-default div[class^="bc-carousel-"] button.bc-carousel__arrow--left {
@@ -457,6 +521,49 @@ footer.footer .footer-info-list li{
 footer.footer .footer-info-list li::before{
     display: none;
 }
+
+footer .footer-info-heading{
+    font-family: var(--font2);
+    letter-spacing: normal;
+    color: black;
+}
+
+.tm__main footer .footer-info .footer-info-col.footer-store-info svg {
+    fill: black;
+}
+
+.tm__main footer .footer-info .footer-info-col.footer-store-info svg+span{
+    color: #000;
+}
+
+@media screen and (max-width:768px) {
+    .tm__main footer .footer-info .footer-info-col.footer-store-info{
+        padding: 20px 0px;
+    }
+
+    .tm__main footer .footer-info-heading.footer-toggle-title {
+        padding:20px 0px;
+    }
+
+    .tm__main footer .footer-info .footer-info-col .footer-info--col-inn {
+        border: none;
+    }
+
+    .tm__main footer .footer-info .footer-info-col{
+        border-bottom: 1px solid #CACACA;
+        padding: 0px;
+    }
+    
+    footer .container .footer-info {
+        margin: 0px;
+    }
+
+    footer .footer-info-col.footer-store-info {
+        padding-bottom: 20px;
+        margin: 0;
+    }
+}
+
 // Footer 
 
 // start Sitemap 
@@ -488,3 +595,5 @@ body.type-sitemap  ol.list-with-arrow a {
     }
 }
 // End Sitemap
+
+@import './plp.scss';
