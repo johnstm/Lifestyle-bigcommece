@@ -1,0 +1,81 @@
+:root{
+    --font1: 'montserratregular';
+    --font2: 'montserratmedium';
+    --font3: 'montserratsemibold';
+    --font4: 'montserratbold';
+    --btnclr1: #2e3344 ;
+}
+
+.type-editaccount { 
+
+}
+
+.tm__main[class*="account"] nav.navBar ,
+.tm__main[class*="wish"] nav.navBar   {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.tm__main[class*="account"] nav.navBar .navBar-section ,
+.tm__main[class*="wish"] nav.navBar .navBar-section   {
+    display: flex;
+}
+
+.tm__main[class*="account"] nav.navBar .navBar-section li ,
+.tm__main[class*="wish"] nav.navBar .navBar-section li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-left: none;
+    border-right: 0px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    z-index: 100;
+}
+
+.tm__main[class*="account"] nav.navBar .navBar-section li.is-active ,
+.tm__main[class*="wish"] nav.navBar .navBar-section li.is-active {
+    border-bottom-color: var(--btnclr1);
+}
+
+.tm__main[class*="account"] nav.navBar::before ,
+.tm__main[class*="wish"]  nav.navBar::before  {
+    height: 4px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: aliceblue;
+    z-index: -1;
+}
+
+// Addresses
+.type-account_addressbook .addressList{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+.type-account_addressbook .addressList .address {
+    padding: 10px;
+}
+
+.type-account_addressbook .panel--address .form-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    position: static;
+}
+
+.type-account_addressbook .panel--address .form-actions .button {
+    margin: 0px 10px;
+}
+
+.type-account_addressbook .addressList .panel-body {
+    padding:1.5rem 1.5rem 2.5rem ;
+}
+
+
