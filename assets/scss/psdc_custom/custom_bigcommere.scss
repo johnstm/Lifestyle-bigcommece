@@ -593,6 +593,10 @@ footer #nl_email {
     border: 1px solid ;
 }
 
+.tm__main .footer-info-heading.footer-toggle-title svg {
+    right: -5px;
+}
+
 @media screen and (max-width:768px) {
     .tm__main footer .footer-info .footer-info-col.footer-store-info{
         padding: 20px 0px;
@@ -628,6 +632,10 @@ body.type-sitemap ol.list-with-arrow ,
 body.type-sitemap ol.list-with-arrow li {
     list-style-type: decimal;
     color: black;
+}
+
+.tm__main footer .footer-info-inn {
+    border-top-width: 0.5px ;
 }
 
 
@@ -670,5 +678,5 @@ body.type-sitemap  ol.list-with-arrow a {
     }
 }
 
-@import './plp.scss';
+@import './custom_plp.scss';
 @import './custom_account.scss';
