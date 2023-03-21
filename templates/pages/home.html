@@ -64,6 +64,9 @@ blog:
         {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
       </div>
     {{/if}}
+
+
+
     {{{region name="home_below_new_products"}}}
     <!-- Blog Post Section -->
     {{#if settings.blog_enabled}}
@@ -73,6 +76,21 @@ blog:
     {{#if theme_settings.show_product_reviews_tabs}}
     {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
   {{/if}}
+
+  {{{region name="home_below_new_products"}}}
+    
+  <!-- Newsletter Section -->
+  {{{region name="CUSTOM_NEW_REGION"}}}
+  
+  {{#if settings.show_newsletter_box}}
+      <article class="" data-section-type="newsletterSubscription">
+        <div class="">
+          {{#if settings.show_newsletter_box}}
+          {{> components/common/subscription-form}}
+          {{/if}}
+        </div>
+      </article>
+      {{/if}}
 
   <!-- Home Bottom Banner -->
     <div class="banners home-bottom-banner m-b-40" data-banner-location="bottom">
