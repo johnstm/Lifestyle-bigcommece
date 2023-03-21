@@ -168,7 +168,20 @@
                     <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
                 </h2>
             {{/if}}
+            <div class="title-wishlist">
             <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
+            {{#if settings.show_wishlist}}
+                  <div class="productView-compare">
+                      <button class="button compare" type="button"   {{#if customer}} data-reveal-id="{{#if schema}}WishlistModal{{else}}QuickViewWishlistModal{{/if}}"{{else}}onclick="location.href='{{urls.auth.login}}';"{{/if}} name="button">
+                        <i class="icon">
+                          <svg>
+                            <use xlink:href="#icon-wishlist"/>
+                          </svg>
+                        </i>
+                    </button>
+                  </div>
+            {{/if}}
+            </div>
             {{{region name="product_below_price"}}}
             <div class="price-block">
               {{#if product.call_for_price}}
@@ -184,7 +197,9 @@
                   {{/or}}
               </div>
 
-              <div class="price-block-left">
+            </div>
+
+            <div class="price-block-left">
                 {{#if product.stock_level}}<span class="instock">In stock</span>{{/if}}
                 <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
                     {{#if settings.show_product_rating}}
@@ -207,7 +222,7 @@
                         </span>
                     {{/if}}
                     {{#if settings.show_product_reviews}}
-                        <span class="productView-reviewLink">
+                        <span class="productView-reviewLink writeReview">
                             <a href="{{product.url}}{{#if is_ajax}}#write_review{{/if}}"
                                {{#unless is_ajax }}data-reveal-id="modal-review-form"{{/unless}}>
                                {{lang 'products.reviews.new'}}
@@ -216,7 +231,6 @@
                         {{> components/products/modals/writeReview}}
                     {{/if}}
                 </div>
-              </div>
             </div>
 
             {{product.detail_messages}}
@@ -354,17 +368,6 @@
                     </a>
                   </div>
                 {{/if}}
-                {{#if settings.show_wishlist}}
-                  <div class="productView-compare">
-                      <button class="button compare" type="button"   {{#if customer}} data-reveal-id="{{#if schema}}WishlistModal{{else}}QuickViewWishlistModal{{/if}}"{{else}}onclick="location.href='{{urls.auth.login}}';"{{/if}} name="button">
-                        <i class="icon">
-                          <svg>
-                            <use xlink:href="#icon-wishlist"/>
-                          </svg>
-                        </i>
-                    </button>
-                  </div>
-                  {{/if}}
             </form>
             {{#if settings.show_wishlist}}
               <div id="{{#if schema}}WishlistModal{{else}}QuickViewWishlistModal{{/if}}" class="modal" data-reveal>
