@@ -1006,10 +1006,10 @@
         "comments": "Comments"
     },
     "newsletter": {
-        "subscribe": "Sign Up for our Newsletter",
+        "subscribe": "GET IN OUR COMFORT ZONE",
         "newsletter_error": "Please enter correct email",
-        "subscribe_intro": " ",
-        "subscribe_submit": "submit",
+        "subscribe_intro": "Stay up to date with the latest comfort hacks",
+        "subscribe_submit": "SUBSCRIBE",
         "email_placeholder": "Join our Newsletter...",
         "subscribed_heading": "Thanks for Subscribing!",
         "subscribed_heading_error": "Oops...",
