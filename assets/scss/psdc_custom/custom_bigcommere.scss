@@ -53,6 +53,29 @@ body.tm__main *{
     border: 1px solid var(--btnclr1);
 }
 
+.tm__main input ,
+.tm__main input:hover ,
+.tm__main input:active ,
+.tm__main textarea ,
+.tm__main textarea:hover ,
+.tm__main textarea:active {
+    border: 1px solid #dfdfdf;
+}
+
+
+.tm__main  input:-internal-autofill-selected {
+    background-color: transparent !important;
+}
+/* Change autocomplete styles in WebKit */
+
+.tm__main input:-webkit-autofill,
+.tm__main input:-webkit-autofill:hover, 
+.tm__main input:-webkit-autofill:focus, 
+.tm__main input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 // Header
 .logo-block .header-logo a:hover{
     color: #ffffff;
@@ -85,7 +108,7 @@ header.header.stuck  .header-left{
 }
 
 header.header.stuck  .header-center{
-    width: 10   0%;
+    width: 100%;
 }
 
 header.header.stuck  .header-right {
@@ -99,6 +122,27 @@ header.header.stuck  .header-right {
 
 header .header-right li.wishlist a svg{
     fill: #f6f6f6;
+}
+
+header .navUser-item--compare .countPill ,
+header .navUser-item--cart .countPill {
+    top: 15px;
+    right: -10px;
+}
+
+header .navUser-item--cart .previewCartAction {
+    text-align: left;
+}
+
+header .navUser-item--cart .previewCartAction-inn{
+    display: flex;
+    flex-direction: column;
+}
+
+header .navUser-item--cart #cart-preview-dropdown .previewCartAction-inn div{
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 10px;
 }
 
 @media screen and (min-width:450px) {
@@ -536,6 +580,19 @@ footer .footer-info-heading{
     color: #000;
 }
 
+footer #nl_email {
+    border: 1px solid #dfdfdf;
+    border-right: none;
+}
+
+.tm__main .footer-info-newsletter .form-prefixPostfix .button {
+    border: none;
+}
+
+.tm__main .footer-info-newsletter .form-prefixPostfix .button:hover {
+    border: 1px solid ;
+}
+
 @media screen and (max-width:768px) {
     .tm__main footer .footer-info .footer-info-col.footer-store-info{
         padding: 20px 0px;
@@ -595,6 +652,23 @@ body.type-sitemap  ol.list-with-arrow a {
     }
 }
 // End Sitemap
+
+// Contact US
+.tm__main[class*="contact"] h1.page-heading {
+    border: none;
+}
+
+#contact-us-page .g-recaptcha > div {
+    margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+    #contact-us-page >p {
+        color: #444444;
+        font-size: 16px;
+        line-height: 1.25
+    }
+}
 
 @import './plp.scss';
 @import './custom_account.scss';
