@@ -543,6 +543,11 @@ body.type-default div[class^="sd-hero-image-"] div[data-test-id="hero-image-titl
     color: black;
 }
 
+.tm__main .page-heading+.page-sub-heading{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
 // Blog 
 .type-default .home-blog-post .page-heading {
     font-weight: 600;
@@ -553,10 +558,45 @@ body.type-default div[class^="sd-hero-image-"] div[data-test-id="hero-image-titl
     padding-left: 0px;
 }
 
+//  Newsletter section 
+.type-default .newsletter-box {
+    position: relative;
+    display: flex ;
+    justify-content: flex-end;
+}
 
+.type-default .newsletter-box .form-fieldset .subscribeFormContent .button {
+    width: auto;
+    margin: 0px;
+}
 
+.type-default .newsletter-box .form-prefixPostfix .form-input {
+    max-width: 300px;
+}
 
-// Footer 
+.newsletter-box .newswrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-box .newswrapper .textwrap{
+    text-align: center;
+}
+
+@media screen and (min-width:768px) {
+    .type-default .newsletter-box  .newswrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .newsletter-box .newswrapper .textwrap{
+        text-align: left;
+    }    
+}
+
+// Footer
 
 footer.footer .footer-info-list li{
     padding-left: 0px;
@@ -595,6 +635,24 @@ footer #nl_email {
 
 .tm__main .footer-info-heading.footer-toggle-title svg {
     right: -5px;
+}
+
+.tm__main footer .footer-bar-inn {
+    padding-bottom: 0px;
+}
+
+.tm__main footer  .payment .footer-info-heading {
+    display: none;
+}
+
+.footer-payment-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tm__main footer  .payment {
+    padding-bottom: 20px;
 }
 
 @media screen and (max-width:768px) {
@@ -638,6 +696,9 @@ body.type-sitemap ol.list-with-arrow li {
     border-top-width: 0.5px ;
 }
 
+.tm__main footer {
+    background: darken($theme-white-color, 3%);
+}
 
 body.type-sitemap ol.list-with-arrow  ul {
     margin-left: 10px;
