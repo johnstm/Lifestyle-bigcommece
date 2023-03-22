@@ -171,6 +171,11 @@
     border: none;
 }
 
+.type-product .productView-info dt.sku-label {
+    min-width: max-content;
+    padding-right: 5px;
+}
+
 @media screen and (min-width:768px) {
     .type-product .productView-description {
         width: 70%;
@@ -183,4 +188,25 @@
 
 .type-product #modal-review-form .modal-header {
     border: none;
+}
+
+@media (min-width:1023px){
+    .type-product  .pdt-desc-wrapper {
+        display: block;
+        width: 100%;
+        clear: right ;
+        float: right;
+    }
+
+    .type-product  .productView-description {
+        float: right;
+        width: 45%;
+    }
+}
+
+@media (min-width:1279px){
+    .type-product  .productView-description {
+        float: right;
+        width: 50%;
+    }
 }
