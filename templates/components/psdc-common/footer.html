@@ -31,8 +31,19 @@
               <use xlink:href="#icon-time"></use>
             </svg><span>{{theme_settings.footer-time}}</span></p>
           {{/if}}
+          {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+        <article 
+         class="footer-info-col
+               footer-info-col--social
+               footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+         data-section-type="footer-webPages">
+         <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
+         {{> components/common/social-links}}
+       </article>
+       {{/if}}
         </article>
         {{/if}}
+        
         {{#if pages}}
         <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
           <div class="footer-info--col-inn">
@@ -151,23 +162,21 @@
             </span>
             {{/if}}
             <a class="site-map" href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-            <a class="" data-section-type="footer-webPages">
-              {{> components/common/social-links}}
-            </a>
           </p>
         </div>
         {{/or}}
-        {{#if theme_settings.show_powered_by}}
-        <div class="footer-copyright">
-          <p class="powered-by">BigCommerce Theme by <a class="theme-red-color" href="https://www.1center.co/"
-              rel="nofollow" target="_blank">1Center</a></p>
-        </div>
-        {{/if}}  
-      </div>
         <div class="payment">
           <h5 class="footer-info-heading">{{lang 'payment-method.payment'}}</h5>
           {{> components/psdc-common/payment-icons}}
         </div>
+        <!-- {{#if theme_settings.show_powered_by}}
+        <div class="footer-copyright">
+          <p class="powered-by">BigCommerce Theme by <a class="theme-red-color" href="https://www.1center.co/"
+              rel="nofollow" target="_blank">1Center</a></p>
+        </div>
+        {{/if}}   -->
+      </div>
+      
     </div>
   </div>
   {{/or}}
