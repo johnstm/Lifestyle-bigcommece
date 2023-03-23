@@ -387,11 +387,13 @@
 
 {{#if schema}}
   {{#if theme_settings.show_product_details_tabs}}
+    <div class="pdt-desc-wrapper">
       <article class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
         <div class="productView-description-inn">
           {{> components/products/description-tabs}}
         </div>
       </article>
+    </div> 
   {{/if}}
 {{/if}}
 </div>
