@@ -51,23 +51,25 @@ blog:
       </div>
     {{/if}}
     {{{region name="home_below_featured_products"}}}
-    <!-- Top Product Section -->
-    {{#if products.top_sellers}}
-      <div class="product-section m-b-40">
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-      </div>
-    {{/if}}
-    {{{region name="home_below_top_products"}}}
+    
     <!-- New Product Section -->
     {{#if products.new}}
       <div class="product-section m-b-40">
         {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
       </div>
     {{/if}}
-
-
-
+    
     {{{region name="home_below_new_products"}}}
+
+    <!-- Top Product Section -->
+    {{#if products.top_sellers}}
+      <div class="product-section m-b-40">
+        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+      </div>
+    {{/if}}
+
+
+    {{{region name="home_below_top_products"}}}
     <!-- Blog Post Section -->
     {{#if settings.blog_enabled}}
         {{> components/psdc-common/home-blog-section }}
@@ -82,6 +84,10 @@ blog:
   <!-- Newsletter Section -->
   {{{region name="CUSTOM_NEW_REGION"}}}
   
+  <div style="background-color: lightgrey;
+  width: 100%;
+  padding: 50px;
+  margin: 20px;">
   {{#if settings.show_newsletter_box}}
       <article class="newsletter-box" data-section-type="newsletterSubscription">
         <div class="newswrapper">
@@ -91,7 +97,7 @@ blog:
         </div>
       </article>
       {{/if}}
-
+  </div>
   <!-- Home Bottom Banner -->
     <div class="banners home-bottom-banner m-b-40" data-banner-location="bottom">
       {{#each (limit banners.bottom_metadata 1)}}
