@@ -46,7 +46,7 @@
                             {{/each}}
                         </dl>
 
-                        <a href="#" data-item-edit="{{id}}">{{lang 'cart.checkout.change'}}</a>
+                        <a href="#" class="change" data-item-edit="{{id}}">{{lang 'cart.checkout.change'}}</a>
                     {{/if}}
 
                     {{#if type '==' 'GiftCertificate'}}
@@ -63,6 +63,12 @@
                                 {{event_date.date}}
                             </dd>
                         </dl>
+                    {{/if}}
+
+                    {{#if can_modify}}
+                        <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
+                            Remove
+                        </a>
                     {{/if}}
 
                 </td>
@@ -112,7 +118,7 @@
 
                 </td>
 
-                <td class="cart-item-block cart-item-info">
+                <td class="cart-item-block cart-item-info price">
                     <span class="cart-item-label">{{lang 'cart.checkout.total'}}</span>
                     {{#or ../customer (if ../theme_settings.restrict_to_login '!==' true)}}
                         <strong class="cart-item-value {{#if total_discounted}}price--discounted{{/if}}">{{total.formatted}}</strong>
