@@ -78,4 +78,68 @@
     padding:1.5rem 1.5rem 2.5rem ;
 }
 
+//Login
+.type-login  .login-form.form .form-actions{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.type-login .forgot-password {
+    margin-top: 10px;
+    padding-top: 12px;
+}
+
+.type-login .create-acc {
+    display: block ;
+    text-align: center;
+}
+
+.type-login .new-customer {
+    margin-top: 25px;
+}
+
+@media screen and (min-width:767px) {
+    .type-login .login-row {
+        flex-direction: column;
+    }
+
+    .type-login .login-form.form ,
+    .type-login .login-row {
+        margin-top: 0px;
+    }
+}
+
+.type-createaccount .g-recaptcha {
+    padding: 0px;
+}
+
+.type-createaccount .g-recaptcha > div{
+    margin:  0 auto;
+}
+
+.type-createaccount .account-body .form-actions{
+    margin-top: 0px;
+}
+
+.type-account_orderstatus  .account-orderStatus-label{
+    line-height: normal;
+}
+
+@media screen and (min-width:600px) {
+    .type-account_orderstatus .account-product-body .account-orderStatus {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        right: 0px;
+        flex-direction: column;
+    }    
+
+    .type-account_orderstatus .account-list .account-orderStatus-label {
+        margin-bottom: 10px;
+    }
+}
 

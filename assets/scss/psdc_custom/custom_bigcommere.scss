@@ -1,5 +1,9 @@
-@import '../settings/layouts/header/settings';
-@import '../theme.scss';
+$header-bg: stencilColor("header-backgroundColor");
+$card-title-color:  stencilColor("card-title-color");
+$card-title-color-hover: stencilColor("card-title-color-hover");
+$theme-white-color: #ffffff;
+$theme-primary-color: stencilColor("stencil-primary-color");
+
 // Fonts
 @font-face {
     font-family: 'overpass';
@@ -14,6 +18,55 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'montserratbold';
+    src: url('../../fonts/montserrat-bold-webfont.eot');
+    src: url('../../fonts/montserrat-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/montserrat-bold-webfont.woff2') format('woff2'),
+        url('../../fonts/montserrat-bold-webfont.woff') format('woff'),
+        url('../../fonts/montserrat-bold-webfont.ttf') format('truetype'),
+        url('../../fonts/montserrat-bold-webfont.svg#montserratbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+font-family: 'montserratsemibold';
+src: url('../../fonts/montserrat-semibold-webfont.eot');
+src: url('../../fonts/montserrat-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+    url('../../fonts/montserrat-semibold-webfont.woff') format('woff'),
+    url('../../fonts/montserrat-semibold-webfont.ttf') format('truetype'),
+    url('../../fonts/montserrat-semibold-webfont.svg#montserratsemibold') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'montserratmedium';
+src: url('../../fonts/montserrat-medium-webfont.eot');
+src: url('../../fonts/montserrat-medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/montserrat-medium-webfont.woff2') format('woff2'),
+    url('../../fonts/montserrat-medium-webfont.woff') format('woff'),
+    url('../../fonts/montserrat-medium-webfont.ttf') format('truetype'),
+    url('../../fonts/montserrat-medium-webfont.svg#montserratmedium') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'montserratregular';
+src: url('../../fonts/montserrat-regular-webfont.eot');
+src: url('../../fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+    url('../../fonts/montserrat-regular-webfont.woff') format('woff'),
+    url('../../fonts/montserrat-regular-webfont.ttf') format('truetype'),
+    url('../../fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+
 :root{
     --font1: 'montserratregular';
     --font2: 'montserratmedium';
@@ -25,6 +78,7 @@
 
 body.tm__main *{
     font-family: var(--font1) ;
+    font-style: normal;
 }
 
 .tm__main button , .tm__main a.button ,
@@ -88,11 +142,13 @@ header .header-inner {
 }
 
 header .header-inner .logo-wrap {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%,-50%);
     width: auto;
+    display: flex;
+    justify-content: flex-start;
 }
 
 header .logo-wrap .header-logo-text {
@@ -110,7 +166,7 @@ header.header.stuck  .header-left{
 }
 
 header.header.stuck  .header-center{
-    width: 100%;
+    width: auto;
 }
 
 header.header.stuck  .header-right {
@@ -120,6 +176,10 @@ header.header.stuck  .header-right {
     justify-content: flex-end;
     flex-wrap: nowrap;
     -webkit-flex-wrap: nowrap;
+}
+
+header.stuck .navPages-item.sfHover .nav-second-level {
+    margin-top: 11px;
 }
 
 header .header-right li.wishlist a svg{
@@ -157,6 +217,28 @@ header .navUser-item--cart #cart-preview-dropdown .previewCartAction-inn div{
     }
 }
 
+@media  (min-width:450px) and (max-width:1023px) {
+    header .header-inner .logo-wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        justify-content: center;
+    }
+}
+
+@media (min-width:1023px) and (max-width: 1279px){
+    .tm__main header .container{
+        max-width: 1000px;   
+    }
+}
+
+@media (min-width:1400px) {
+    .tm__main header .container{
+        max-width: 1300px;   
+    }
+}
+
 @media screen and (min-width:1023px) {
     header .header-inner .logo-wrap{
         top: 25%;
@@ -166,14 +248,14 @@ header .navUser-item--cart #cart-preview-dropdown .previewCartAction-inn div{
         position: static !important;
     }
 
-    header .header-main .header-inner{
-        flex-wrap: wrap;
-    }
+    // header .header-main .header-inner{
+    //     flex-wrap: wrap;
+    // }
 
     header .header-main .header-center{
         display: flex;
-        width: 100%;
-        order: 3;
+        // width: 100%;
+        // order: 3;
         justify-content: center;
     }
 
@@ -181,6 +263,10 @@ header .navUser-item--cart #cart-preview-dropdown .previewCartAction-inn div{
         left: 50% !important;
         right: auto !important;
         transform: translate(-50%, -50%);
+    }
+
+    .navPages-list  {
+        // margin: 10px 0px;
     }
 }
 
@@ -256,7 +342,7 @@ h3.block-title{
 }
 
 body.type-default .heroCarousel-content{
-    background-color: #ffffff73;
+    // background-color: #ffffff73;
     border-radius: 10px;
     min-width: 70rem;
 }
@@ -295,6 +381,14 @@ body.type-default .heroCarousel-content{
     font-weight: 600;
 }
 
+.tm__main .productCarousel .slick-arrow svg.product-slick-arrow {
+    display: none;
+}
+
+.tm__main .productCarousel .slick-arrow svg.product-slick-arrow+svg{
+    display: block;
+}
+
 .productCarousel.slick-initialized  .slick-arrow {
     top: calc( 50% - 20px );
 }
@@ -323,6 +417,18 @@ body.type-default .heroCarousel-content{
 
 .tm__pdtcard.card .card-figure a.button {
     border-radius: 50%;
+}
+
+.tm__pdtcard.card .sale-flag-side {
+    top: 0;
+    left: 0;
+}
+.tm__pdtcard.card .card-text.brand-name {
+    text-transform: uppercase;
+}
+
+.tm__pdtcard.card .card-title{
+    text-transform: capitalize;
 }
 
 @media screen and (min-width:992px) {
@@ -389,6 +495,22 @@ body.type-default #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider  .e
 // .form-field .form-increment{
 //     display: flex;
 // }
+
+.form-field.form-field--increments  i.icon  {
+    font-size: 16px;
+}
+
+.form-field.form-field--increments button.button:hover {
+    color: white;
+}
+
+.form-field.form-field--increments button.button{
+    color: var(--btnclr1);
+}
+
+.form-field.form-field--increments  i.icon svg {
+    display: none;
+}
 
 // Alternate banner
 .type-default div[class^="alternative-banner-row-"] a.button_link_href {
@@ -567,6 +689,16 @@ body.type-default div[class^="sd-hero-image-"] div[data-test-id="hero-image-titl
     justify-content: flex-end;
 }
 
+.type-default .home-nl {
+    background-color: lightgrey;
+    width: 100%;
+    padding: 50px;
+    margin: 0px;
+    background: url(../../img/newletter.png) lightgrey no-repeat top 0px left 0px;
+    background-size: cover;
+    background-position: center;
+}
+
 .type-default .newsletter-box .form-fieldset .subscribeFormContent .button {
     width: auto;
     margin: 0px;
@@ -598,6 +730,14 @@ body.type-default div[class^="sd-hero-image-"] div[data-test-id="hero-image-titl
     }    
 }
 
+@media screen and (min-width:1023px) {
+    .type-default .home-nl {
+        background-size: 100% 100%;
+        background-size: contain;
+    }
+}
+
+
 // Footer
 
 footer.footer .footer-info-list li{
@@ -612,6 +752,11 @@ footer .footer-info-heading{
     font-family: var(--font2);
     letter-spacing: normal;
     color: black;
+}
+
+footer  .socialLinks  .socialLinks-item::before{
+    content: "";
+    display: none;
 }
 
 .tm__main footer .footer-info .footer-info-col.footer-store-info svg {
@@ -674,6 +819,11 @@ footer #nl_email {
         border-bottom: 1px solid #CACACA;
         padding: 0px;
     }
+
+    .tm__main footer .footer-info .footer-info-col--social{
+        border: none;
+        text-align: left;
+    }
     
     footer .container .footer-info {
         margin: 0px;
@@ -682,6 +832,10 @@ footer #nl_email {
     footer .footer-info-col.footer-store-info {
         padding-bottom: 20px;
         margin: 0;
+    }
+
+    .tm__main footer .footer-bar .payment {
+        width: 100%;
     }
 }
 
@@ -739,6 +893,26 @@ body.type-sitemap  ol.list-with-arrow a {
         font-size: 16px;
         line-height: 1.25
     }
+}
+
+// Compare 
+.tm__main.type-compare * {
+    font-family: var(--font1);
+}
+
+.type-compare .compareTable .compareTable-row  th:first-child {
+    width: auto;
+    text-align: left;
+}
+
+.type-compare .compareTable .compareTable-row  th:first-child div{
+    // width: 200px;
+}
+
+.type-compare .compareTable .compareTable-row  .compareTable-product ,
+.type-compare .compareTable .compareTable-row .compareTable-action ,
+.type-compare .compareTable .compareTable-row .compareTable-item {
+    // width: 25%;
 }
 
 @import './custom_plp.scss';
