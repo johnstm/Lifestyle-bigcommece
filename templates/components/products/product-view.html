@@ -162,25 +162,38 @@
     </section>
 
     <section class="productView-details">
-        <div class="productView-product">
+        <div class="productView-product wfwf">
             {{#if product.brand}}
                 <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
-                    <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
+                    <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}} class="brand-title">{{product.brand.name}}</span></a>
                 </h2>
             {{/if}}
             <div class="title-wishlist">
             <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
-            {{#if settings.show_wishlist}}
-                  <div class="productView-compare">
-                      <button class="button compare" type="button"   {{#if customer}} data-reveal-id="{{#if schema}}WishlistModal{{else}}QuickViewWishlistModal{{/if}}"{{else}}onclick="location.href='{{urls.auth.login}}';"{{/if}} name="button">
-                        <i class="icon">
-                          <svg>
-                            <use xlink:href="#icon-wishlist"/>
-                          </svg>
-                        </i>
-                    </button>
-                  </div>
-            {{/if}}
+                <div class="compare-wrap">
+                    {{#if theme_settings.EnableProductCompare}}
+                        <div class="productView-compare">
+                            <a data-tooltip class="button compare-box compare" for="compare-{{product.id}}" data-compare-id="{{product.id}}">
+                            <i class="icon">
+                            <svg>
+                                <use xlink:href="#icon-compare"/>
+                            </svg>
+                            </i>
+                        </a>
+                        </div>
+                    {{/if}}
+                    {{#if settings.show_wishlist}}
+                        <div class="productView-compare">
+                            <button class="button compare" type="button"   {{#if customer}} data-reveal-id="{{#if schema}}WishlistModal{{else}}QuickViewWishlistModal{{/if}}"{{else}}onclick="location.href='{{urls.auth.login}}';"{{/if}} name="button">
+                                <i class="icon">
+                                <svg>
+                                    <use xlink:href="#icon-wishlist"/>
+                                </svg>
+                                </i>
+                            </button>
+                        </div>
+                    {{/if}}
+                </div>        
             </div>
             {{{region name="product_below_price"}}}
             <div class="price-block">
@@ -356,17 +369,6 @@
                     {{else}}
                         {{> components/common/alert-error (lang 'products.sold_out')}}
                     {{/if}}
-                {{/if}}
-                {{#if theme_settings.EnableProductCompare}}
-                  <div class="productView-compare">
-                      <a data-tooltip class="button compare-box compare" for="compare-{{product.id}}" data-compare-id="{{product.id}}">
-                      <i class="icon">
-                        <svg>
-                            <use xlink:href="#icon-p-compare"/>
-                        </svg>
-                      </i>
-                    </a>
-                  </div>
                 {{/if}}
             </form>
             {{#if settings.show_wishlist}}
