@@ -165,9 +165,9 @@ header.header.stuck  .header-left{
     justify-content: flex-start;
 }
 
-header.header.stuck  .header-center{
-    width: auto;
-}
+// header.header.stuck  .header-center{
+//     width: auto;
+// }
 
 header.header.stuck  .header-right {
     display: -ms-flexbox;
@@ -180,6 +180,10 @@ header.header.stuck  .header-right {
 
 header.stuck .navPages-item.sfHover .nav-second-level {
     margin-top: 11px;
+}
+
+header.header.stuck{
+    border: none;
 }
 
 header .header-right li.wishlist a svg{
@@ -256,7 +260,11 @@ header .navUser-item--cart #cart-preview-dropdown .previewCartAction-inn div{
         display: flex;
         // width: 100%;
         // order: 3;
-        justify-content: center;
+        // justify-content: center;
+    }
+
+    .tm__main ul.navPages-list .navPages-item:hover {
+        // border-bottom-color: #ffffff;
     }
 
     #quickSearch.is-open{
@@ -267,6 +275,22 @@ header .navUser-item--cart #cart-preview-dropdown .previewCartAction-inn div{
 
     .navPages-list  {
         // margin: 10px 0px;
+    }
+
+    header .header-main .header-left {
+        width: 15%;        
+    }
+
+    header .header-main .header-center {
+        width: 63%;
+    }
+
+    header .header-main .header-right {
+        width: 21%;
+    }
+
+    .tm__main header .header-inner .navUser-section > li {
+        margin: 0 10px;
     }
 }
 
@@ -694,7 +718,7 @@ body.type-default div[class^="sd-hero-image-"] div[data-test-id="hero-image-titl
     width: 100%;
     padding: 50px;
     margin: 0px;
-    background: url(../../img/newletter.png) lightgrey no-repeat top 0px left 0px;
+    background: url('../../img/image\ 11.svg') lightgrey no-repeat top 0px left 0px;
     background-size: cover;
     background-position: center;
 }

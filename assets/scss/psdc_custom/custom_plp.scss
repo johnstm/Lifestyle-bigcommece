@@ -79,6 +79,10 @@
     fill: black;
 }
 
+.actionBar-section .form-label {
+    min-width: 70px;
+}
+
 @media screen and (max-width:768px) {
     .body .container.category {
         padding: 0px;
@@ -218,6 +222,7 @@
 
 .type-product .form-radio+.form-option{
     border-radius: 50%;
+    font-weight: 500;
 }
 
 .type-product .productView-options [data-product-attribute="set-rectangle"] .form-radio:checked + .form-option{
@@ -241,6 +246,11 @@
 
 .type-product #modal-review-form .modal-header {
     border: none;
+}
+
+.type-product .productView-options .form-field .form-input {
+    color: var(--btnclr1);
+    font-weight: 500;
 }
 
 @media (min-width:1023px){
