@@ -194,6 +194,7 @@ header .navUser-item--compare .countPill ,
 header .navUser-item--cart .countPill {
     top: 15px;
     right: -10px;
+    background-color:  white;
 }
 
 header .navUser-item--cart .previewCartAction {
@@ -861,6 +862,10 @@ footer #nl_email {
     .tm__main footer .footer-bar .payment {
         width: 100%;
     }
+}
+
+.tm__main #newsletter-popup {
+    display: none;
 }
 
 // Footer 
